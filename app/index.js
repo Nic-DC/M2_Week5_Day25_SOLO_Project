@@ -6,6 +6,7 @@ const inputErrorPlaceholder = "! Please input a name that contains at least 3 ch
 const inputValidPlaceholder = "enter name";
 const teamErrorMessage = "Please add a member";
 let totalDivs = 0;
+let teamNr = 1;
 
 const nameInput = document.querySelector("#inputName #name");
 const addBtn = document.getElementById("addBtn");
@@ -134,23 +135,24 @@ of divs will be displayed in the "displaySide" container
 const bigDisplayDiv = document.querySelector(".namesAndDisplays");
 
 const createTeamDiv = function () {
-  //for (let i = 0; i < nrOfTeams; i++) {
+  let teamNumber = teamNr++;
   const nameAndDisplay = document.createElement("div");
   nameAndDisplay.classList.add("nameAndDisplay");
 
   const teamName = document.createElement("h3");
   teamName.classList.add("teamName");
   teamName.classList.add("titleAndDescriptionNames");
-  //teamName.innerText = `Team ${i}`;
+  teamName.innerText += `Team ${teamNumber}`;
 
   const displayTeam = document.createElement("div");
   displayTeam.classList.add("displayTeam");
-  // displayTeam.innerText = `t ${i}`;
+  //   displayTeam.innerText = appointNames(displayTeam.innerText);
+  displayTeam.innerText = appointNames(displayTeam.innerText);
 
   nameAndDisplay.appendChild(teamName);
   nameAndDisplay.appendChild(displayTeam);
   bigDisplayDiv.appendChild(nameAndDisplay);
-  //}
+
   totalDivs++;
 };
 
@@ -161,3 +163,26 @@ randomly appoint members to the newly created divs in the
 "displaySide" container
 --------------------------------------------------------
 */
+
+const randomFunc = function (nr) {
+  const random = Math.floor(Math.random() * nr);
+  return random;
+};
+
+const appointNames = function (input) {
+  let nr = totalNamesArray.length;
+  console.log({ nr });
+  //let appointedName = "";
+  let randNr = randomFunc(nr);
+  console.log({ randNr });
+  console.log({ totalNamesArray });
+  for (let i = 0; i < totalNamesArray.length; i++) {
+    if (i === randNr) {
+      console.log(totalNamesArray[i]);
+      //appointedName = totalNamesArray[i];
+      input = totalNamesArray[i];
+    }
+  }
+  // return appointedName;
+  return input;
+};
