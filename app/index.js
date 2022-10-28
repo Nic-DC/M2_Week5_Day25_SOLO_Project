@@ -5,6 +5,7 @@ const totalNamesArray = []; // contains the names that are appended to the displ
 const inputErrorPlaceholder = "! Please input a name that contains at least 3 characters";
 const inputValidPlaceholder = "enter name";
 const teamErrorMessage = "Please add a member";
+let totalDivs = 0;
 
 const nameInput = document.querySelector("#inputName #name");
 const addBtn = document.getElementById("addBtn");
@@ -72,6 +73,7 @@ members <2>
 const createTeam = function () {
   let nr = totalNames;
   let totalPossibleTeams = Math.round(nr / 2);
+  // teamTemplate(totalPossibleTeams);
   if (totalPossibleTeams === 0) {
     nrOfTeams.classList.add("teamErrorMessage");
     nrOfTeams.innerText = teamErrorMessage;
@@ -79,7 +81,9 @@ const createTeam = function () {
     nrOfTeams.classList.remove("teamErrorMessage");
 
     nrOfTeams.innerText = `${totalPossibleTeams}`;
-    createTeamDiv();
+    if (totalDivs < parseInt(nrOfTeams.innerText)) {
+      createTeamDiv();
+    }
   }
 };
 plusBtn.addEventListener("click", createTeam);
@@ -87,6 +91,7 @@ plusBtn.addEventListener("click", createTeam);
 const removeTeam = function () {
   let nr = totalNames;
   let totalPossibleTeams = Math.floor(nr / 2);
+  // teamTemplate(totalPossibleTeams);
   if (totalPossibleTeams === 0) {
     nrOfTeams.classList.add("teamErrorMessage");
     nrOfTeams.innerText = teamErrorMessage;
@@ -94,14 +99,36 @@ const removeTeam = function () {
     nrOfTeams.classList.remove("teamErrorMessage");
 
     nrOfTeams.innerText = `${totalPossibleTeams}`;
+    if (Math.round(nr / 2) !== Math.floor(nr / 2)) {
+      // it removes lastChild BUT every last child with every click
+      bigDisplayDiv.removeChild(bigDisplayDiv.lastChild);
+    }
   }
 };
 minusBtn.addEventListener("click", removeTeam);
 
+// const teamTemplate = function (input) {
+//   if (input === 0) {
+//     nrOfTeams.classList.add("teamErrorMessage");
+//     nrOfTeams.innerText = teamErrorMessage;
+//   } else {
+//     nrOfTeams.classList.remove("teamErrorMessage");
+
+//     nrOfTeams.innerText = `${input}`;
+//   }
+// };
+
+// const teamTemplateCreateDiv = function () {
+//   if (totalDivs < parseInt(nrOfTeams.innerText)) {
+//     createTeamDiv();
+//   }
+// };
+
 /* 
                                                   STEP 3
 --------------------------------------------------------
-
+when clicking the - / + buttons, the corresponding number
+of divs will be displayed in the "displaySide" container
 --------------------------------------------------------
 */
 const bigDisplayDiv = document.querySelector(".namesAndDisplays");
@@ -124,11 +151,13 @@ const createTeamDiv = function () {
   nameAndDisplay.appendChild(displayTeam);
   bigDisplayDiv.appendChild(nameAndDisplay);
   //}
+  totalDivs++;
 };
-//plusBtn.addEventListener("click", createTeamDiv);
-/*
- <div class="nameAndDisplay">
-    <h3 class="teamName titleAndDescriptionNames">Team2</h3>
-    <div class="displayTeam">t2</div>
-</div> 
+
+/* 
+                                                  STEP 4
+--------------------------------------------------------
+randomly appoint members to the newly created divs in the
+"displaySide" container
+--------------------------------------------------------
 */
