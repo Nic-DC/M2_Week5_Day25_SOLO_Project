@@ -18,7 +18,7 @@
           <div id="inputNameAndTeams">
             <!-- input name -->
             <div id="inputName">
-              <label for="name">Add Member</label>
+              <label for="name" class="titleAndDescriptionNames">Add Member</label>
               <input type="text" id="name" name="name" required minlength="3" maxlength="102" />
             </div>
 
@@ -27,22 +27,22 @@
 
             <!-- input teams -->
             <div id="inputTeams">
-              <p id="teamsText">Teams</p>
+              <p id="teamsText" class="titleAndDescriptionNames">Teams</p>
               <div id="inputBtnsTeams">
-                <button class="btn" id="minusBtn">-</button>
+                <button class="btn minusPlusBtns" id="minusBtn">-</button>
                 <p id="nrOfTemasDisplay">0</p>
-                <button class="btn" id="plusBtn">+</button>
+                <button class="btn minusPlusBtns" id="plusBtn">+</button>
               </div>
             </div>
           </div>
 
           <!-- display inputted names -->
-          <div id="displayInputtedNames"></div>
+          <div id="displayInputtedNames">Display names</div>
 
           <!-- assign memebers & reset -->
           <div id="assignAndReset">
             <button class="btn assign-member">Assign Member</button>
-            <button class="resetBtn">Reset</button>
+            <button class="btn resetBtn">Reset</button>
           </div>
         </div>
 
@@ -50,15 +50,15 @@
         <div id="displaySide">
           <div class="namesAndDisplays">
             <div class="nameAndDisplay">
-              <h1>Team1</h1>
+              <h3 class="teamName titleAndDescriptionNames">Team1</h3>
               <div class="displayTeam">t1</div>
             </div>
             <div class="nameAndDisplay">
-              <h1>Team2</h1>
+              <h3 class="teamName titleAndDescriptionNames">Team2</h3>
               <div class="displayTeam">t2</div>
             </div>
             <div class="nameAndDisplay">
-              <h1>Team3</h1>
+              <h3 class="teamName titleAndDescriptionNames">Team3</h3>
               <div class="displayTeam">t3</div>
             </div>
           </div>
