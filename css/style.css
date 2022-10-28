@@ -1,3 +1,7 @@
+:root {
+  --button-primary-color: #677bf7;
+}
+
 *,
 *::before,
 *::after {
@@ -6,5 +10,129 @@
 
 body {
   margin: 0;
-  background-color: red;
+  background-color: white;
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+
+  margin-inline: auto;
+}
+
+#container h1 {
+  width: 90%;
+  margin: 0 auto;
+}
+
+#content {
+  display: flex;
+  width: 90%;
+  margin-inline: auto;
+  margin-top: 10rem;
+}
+
+#inputSide {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 50%;
+  padding: 2rem;
+}
+
+#inputNameAndTeams {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  border: 1px solid black;
+}
+
+#inputName {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 60%;
+}
+
+#inputName #name {
+  width: 100%;
+}
+
+#addBtn {
+  width: 10%;
+}
+
+#teamsText {
+  margin: 0;
+}
+
+#inputTeams {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 30%;
+}
+
+#inputBtnsTeams {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+}
+
+#addBtn {
+  align-self: flex-end;
+}
+
+#nrOfTemasDisplay {
+  margin: 0;
+}
+
+#displaySide {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.namesAndDisplays {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* display inputted names */
+#displayInputtedNames {
+  height: 200px;
+}
+
+#assignAndReset {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.assign-member {
+  width: 90%;
+}
+
+/* ____________ utility classes____________ */
+.btn {
+  background-color: var(--button-primary-color);
+  border: none;
+  color: white;
+  letter-spacing: 0.5px;
+  font-weight: bold;
+  padding: 0.5rem;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: transform 350ms ease;
+}
+
+.btn:hover {
+  transform: scale(1.05);
 }

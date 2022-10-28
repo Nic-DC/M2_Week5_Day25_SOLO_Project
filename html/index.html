@@ -8,6 +8,64 @@
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
+    <div id="container">
+      <h1>Team Generator</h1>
+
+      <div id="content">
+        <!-- left div -->
+        <div id="inputSide">
+          <!-- input -->
+          <div id="inputNameAndTeams">
+            <!-- input name -->
+            <div id="inputName">
+              <label for="name">Add Member</label>
+              <input type="text" id="name" name="name" required minlength="3" maxlength="102" />
+            </div>
+
+            <!-- add btn -->
+            <button id="addBtn" class="btn">Add</button>
+
+            <!-- input teams -->
+            <div id="inputTeams">
+              <p id="teamsText">Teams</p>
+              <div id="inputBtnsTeams">
+                <button class="btn" id="minusBtn">-</button>
+                <p id="nrOfTemasDisplay">0</p>
+                <button class="btn" id="plusBtn">+</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- display inputted names -->
+          <div id="displayInputtedNames"></div>
+
+          <!-- assign memebers & reset -->
+          <div id="assignAndReset">
+            <button class="btn assign-member">Assign Member</button>
+            <button class="resetBtn">Reset</button>
+          </div>
+        </div>
+
+        <!-- rigth div -->
+        <div id="displaySide">
+          <div class="namesAndDisplays">
+            <div class="nameAndDisplay">
+              <h1>Team1</h1>
+              <div class="displayTeam">t1</div>
+            </div>
+            <div class="nameAndDisplay">
+              <h1>Team2</h1>
+              <div class="displayTeam">t2</div>
+            </div>
+            <div class="nameAndDisplay">
+              <h1>Team3</h1>
+              <div class="displayTeam">t3</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="/app/index.js"></script>
   </body>
 </html>
