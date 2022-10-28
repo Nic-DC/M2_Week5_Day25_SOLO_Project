@@ -181,8 +181,10 @@ const appointNames = function (input) {
       console.log(totalNamesArray[i]);
       //appointedName = totalNamesArray[i];
       input = totalNamesArray[i];
+      totalNamesArray.splice(randNr, 1);
     }
   }
+  console.log({ totalNamesArray });
   // return appointedName;
   return input;
 };
