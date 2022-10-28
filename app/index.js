@@ -79,6 +79,7 @@ const createTeam = function () {
     nrOfTeams.classList.remove("teamErrorMessage");
 
     nrOfTeams.innerText = `${totalPossibleTeams}`;
+    createTeamDiv();
   }
 };
 plusBtn.addEventListener("click", createTeam);
@@ -100,15 +101,34 @@ minusBtn.addEventListener("click", removeTeam);
 /* 
                                                   STEP 3
 --------------------------------------------------------
-upon clicking the - and + buttons, the value [that is 
-by default 0] will increase / decrease accordingly by 1;
 
-the buttons will work only depending on the totalNames
-value [each team must have 1 member, but the default
-number of team mates is 2 ---> so for 3 names there
-will be 2 teams: one with the default number of 
-members <2>
-, and the other team that only has 1 member]
 --------------------------------------------------------
 */
 const bigDisplayDiv = document.querySelector(".namesAndDisplays");
+
+const createTeamDiv = function () {
+  //for (let i = 0; i < nrOfTeams; i++) {
+  const nameAndDisplay = document.createElement("div");
+  nameAndDisplay.classList.add("nameAndDisplay");
+
+  const teamName = document.createElement("h3");
+  teamName.classList.add("teamName");
+  teamName.classList.add("titleAndDescriptionNames");
+  //teamName.innerText = `Team ${i}`;
+
+  const displayTeam = document.createElement("div");
+  displayTeam.classList.add("displayTeam");
+  // displayTeam.innerText = `t ${i}`;
+
+  nameAndDisplay.appendChild(teamName);
+  nameAndDisplay.appendChild(displayTeam);
+  bigDisplayDiv.appendChild(nameAndDisplay);
+  //}
+};
+//plusBtn.addEventListener("click", createTeamDiv);
+/*
+ <div class="nameAndDisplay">
+    <h3 class="teamName titleAndDescriptionNames">Team2</h3>
+    <div class="displayTeam">t2</div>
+</div> 
+*/
