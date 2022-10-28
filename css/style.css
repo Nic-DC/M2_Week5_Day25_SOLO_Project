@@ -132,7 +132,7 @@ body {
 
 /* display inputted names */
 #displayInputtedNames {
-  height: 50vh;
+  /* height: 40vh; */
   width: 100%;
   background-color: white;
   margin: 1rem 0;
@@ -187,4 +187,11 @@ body {
   font-weight: bold;
   letter-spacing: 0.5px;
   line-height: 1rem;
+}
+
+/* FOR JS */
+.displayNameInDiv {
+  padding: 1rem;
+  /* background-color: aqua; */
+  border-bottom: solid 1px lightgray;
 }
