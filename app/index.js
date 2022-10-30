@@ -16,6 +16,9 @@ const minusBtn = document.getElementById("minusBtn");
 const plusBtn = document.getElementById("plusBtn");
 const nrOfTeams = document.getElementById("nrOfTemasDisplay");
 
+const assignMember = document.querySelector(".assign-member");
+const reset = document.querySelector(".resetBtn");
+
 /* 
                                                   STEP 1
 --------------------------------------------------------
