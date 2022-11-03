@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Team Generator</title>
+    <link rel="stylesheet" href="/v2/style.css" />
+  </head>
+  <body>
+    <!-- 
+    CONTAINER 
+    -->
+    <div id="container">
+      <!-- 
+        TITLE 
+      -->
+      <h1 id="title">Team Generator</h1>
+
+      <!-- 
+        CONTENT  
+      -->
+      <div id="content">
+        <!-- 
+            INPUTS & DISPLAY & BUTTONS container 
+        -->
+        <div id="leftContainer">
+          <!-- 
+            INPUTS 
+          -->
+          <div id="inputs">
+            <!-- 
+                Add Member
+             -->
+            <div id="nameInputs">
+              <label for="nameInput">Add member</label>
+              <div id="inputAndButton">
+                <input type="text" id="nameInput" placeholder="name" />
+                <button class="btn add-member">Add</button>
+              </div>
+            </div>
+
+            <!-- 
+                Team increase / decrease
+             -->
+            <div id="teams">
+              <label for="teams">Teams</label>
+              <div id="minusAndPlus">
+                <button class="btn minus">-</button>
+                <span id="nrOfTeams">2</span>
+                <button class="btn plus">+</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- 
+            DISPLAY 
+          -->
+          <div id="displayInputs">
+            <ul id="namesList">
+              <!-- <li class="names">item1</li>
+              <li class="names">item1</li>
+              <li class="names">item1</li>
+              <li class="names">item1</li>
+              <li class="names">item1</li>
+              <li class="names">item1</li>
+              <li class="names">item1</li> -->
+            </ul>
+          </div>
+
+          <!-- 
+            BUTTONS 
+          -->
+          <div id="buttons">
+            <button id="assignAllMembers" class="btn assign-all-members">Assign All Members</button>
+            <button id="assignMember" class="btn assign-member">Assign Member</button>
+            <button id="reset" class="btn reset">Reset</button>
+          </div>
+        </div>
+
+        <!-- 
+            TABLES container 
+        -->
+        <div id="tables">
+          <div class="table">
+            <h3 class="table-header">Table 1</h3>
+            <ul id="tableList_1" class="table-list"></ul>
+          </div>
+          <div class="table">
+            <h3 class="table-header">Table 2</h3>
+            <ul id="tableList_2" class="table-list"></ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- script -->
+    <script src="/v2/script.js"></script>
+  </body>
+</html>
